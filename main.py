@@ -9,7 +9,7 @@ def verifica_estructura(texto):
 def read_outlook_emails(folder_path):
     outlook = win32com.client.Dispatch("Outlook.Application").GetNamespace("MAPI")
     print('primero')
-    folder = outlook.Folders["javierfranco0904@hotmail.com"]  # Reemplaza con tu dirección de correo y dominio
+    folder = outlook.Folders["javierfranco0904@hotmail.com"]
 
     print(folder)
     print('************************')
@@ -23,7 +23,7 @@ def read_outlook_emails(folder_path):
     emails = folder.Items
     data = []
     for email in emails:
-        # Filtrar correos con asunto que cumple con el patrón "NIT;NOMBRE;CODIGO;OTRA COSA;..."
+        # Filtrar correos
         subject = email.Subject
         do_match = verifica_estructura(subject)
         
